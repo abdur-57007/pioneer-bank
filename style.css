@@ -1,0 +1,36 @@
+body {
+    padding: 100px;
+}
+
+.user-information-area {
+    margin-top: 100px;
+    box-shadow: 5px 5px 10px gray;
+    border-radius: 10px;
+    padding: 60px;
+}
+
+#transaction-area {
+    display: none;
+}
+
+
+.diposite {
+    background-color: slateblue;
+}
+
+.withdraw {
+    background-color: lightsalmon;
+}
+
+.balance {
+    background-color: orange;
+    background-image: linear-gradient(to right, orange, tomato );
+}
+
+.area-design {
+    padding: 20px;
+    color: white;
+    border-radius: 10px;
+
+    
+}

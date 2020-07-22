@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pioneer Bank Website- Log in</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="user-area">
+        <h1 class="text-center">Welcome to Pioneer Bank</h1>
+        <div class="user-information-area">
+            <h4>Login</h4>
+            <input type="text" class="form-control" placeholder="Enter your mail">
+            <br>
+            <input type="password" class="form-control" placeholder="Enter your password">
+            <br>
+            <button id="login" class="btn btn-success">Log in</button>
+        </div>
+    </div>
+
+<div id="transaction-area">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="diposite area-design">
+                <h5>Diposite</h5>
+                <h2>$ <span id="currentDiposite">00</span></h2>
+            </div>
+        </div>
+        <div class="col-md-4 ">
+            <div class="withdraw area-design">
+                <h5>Withdraw</h5>
+                <h2>$ 00</h2>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="balance area-design">
+                <h5>Balance</h5>
+                <h2><span id="currentBalance">$1000</span></h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="user-information-area">
+                <h4>Diposite</h4>
+                <input id="depositeAmount" type="text" placeholder="Enter Amount for Diposite" class="form-control">
+                <br>
+                <button id="diposite-btn" class="btn btn-success">Diposite</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="user-information-area">
+                <h4>Withdraw</h4>
+                <input type="text" class="form-control" placeholder="Enter Amount for Withdraw">
+                <br>
+                <button class="btn btn-success">Withdraw</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+    <script>
+    
+    // login button event handeler
+
+        const loginButn = document.getElementById("login"); 
+        loginButn.addEventListener("click", function(){
+            const userAccessArea = document.getElementById("user-area");             
+            userAccessArea.style.display = "none";
+            const transactionArea = document.getElementById("transaction-area");
+            transactionArea.style.display= "block";
+        })
+
+
+        // diposite button event handeler
+
+        const dipositeBtn = document.getElementById("diposite-btn");
+        dipositeBtn.addEventListener("click", function(){
+            const depositeAmount = document.getElementById("depositeAmount").value;
+            const depositeNumber = parseFloat(depositeAmount);
+
+
+            const currentDiposite = document.getElementById("currentDiposite").innerText;
+            const currentDipositeNumber = parseFloat(currentDiposite);
+            const totalDiposit = depositeNumber + currentDipositeNumber;
+            document.getElementById("currentDiposite").innerText = totalDiposit;
+
+            const currentBalance = document.getElementById("currentBalance").innerText;
+            const currentBalanceNumber = parseFloat(currentBalance)
+            const totalBalance = depositeNumber + currentBalanceNumber;
+            document.getElementById("currentBalance").innerText = totalBalance;
+
+
+            document.getElementById("depositeAmount").value= "";
+
+
+        })
+
+        
+    </script>
+</body>
+</html>
